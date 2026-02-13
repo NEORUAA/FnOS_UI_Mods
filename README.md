@@ -2,8 +2,9 @@
 <img width="64" height="64" alt="Group 4" src="https://github.com/user-attachments/assets/babf83e2-424d-466f-a50c-f2045481f045" />
 <h1>FnOS_UI_Mods</h1>
 <p>为 FnOS 的 UI 增加平滑圆角、毛玻璃背景及更多的悬停动画</p>
+<img width="1944" height="1104" alt="截屏" src="https://github.com/user-attachments/assets/2c8badad-ad59-480c-b46d-19cf1dfd98f5" />
+<p>*图中字体为 Inter + OPPO Sans 4.0，项目内不提供相关字体。</p>
 </div>
-<img width="1920" height="1080" alt="Frame 6" src="https://github.com/user-attachments/assets/5e3c9275-1262-4f38-9daf-9b2edcc83856" />
 
 ## 介绍
 基于向 WebUI HTML 内注入 CSS 与 JS 来实现修改样式和平滑圆角。使用了`corner-shape`属性来实现平滑圆角，需要 Chrome 139 版本及以上才能获得最佳效果。
@@ -13,6 +14,8 @@
 
 !["传统"样式预览](https://github.com/user-attachments/assets/518ea41c-bc6e-4acf-a7e2-dac3107c382f)
 !["反转"样式预览](https://github.com/user-attachments/assets/821c2176-768a-4eaa-8a38-5c6d56c6e2dd)
+
+两套样式均在 mod.css 内提供，需要自己通过修改注释来切换。
 
 ## 使用方法：
 1. 拉取源代码
