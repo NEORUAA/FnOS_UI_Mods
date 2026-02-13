@@ -37,6 +37,8 @@
     background-color: rgba(var(--semi-grey-0), 0.8);
 }
 
+html .trim-os__app-layout--files-container .trim-ui__table--placeholder,
+.bg-\[var\(--semi-color-bg-1\)\],
 .base-Tabs-vertical>div:first-of-type .bg-\[var\(--semi-color-app\)\] {
     background-color: transparent;
 }
@@ -229,6 +231,10 @@ div.absolute.right-0.top-0.z-50.flex.size-loose.items-center.justify-end.pt-2:ha
     border-radius: 24px !important;
     corner-shape: superellipse(2);
     backdrop-filter: blur(20px) !important;
+    
+    .bg-\[var\(--semi-color-bg-0\)\] {
+        background-color: transparent;
+    }
 }
 
 .semi-popover {
@@ -338,4 +344,26 @@ div.absolute.right-0.top-0.z-50.flex.size-loose.items-center.justify-end.pt-2:ha
 
 .relative.flex.flex-1.flex-col:has(.flex.h-10.w-\[47px\].items-center.justify-center.gap-x-2.border-0.\!border-l-\[3px\].border-solid.border-transparent.hover\:bg-white-10) .scrollbar-hidden.absolute.inset-0.flex.flex-col.items-end.justify-start.gap-2.overflow-y-auto.pt-2{
     height: fit-content;
+}
+
+/* ========= 浅色模式补丁 ========= */
+body:not([theme-mode="dark"]) {
+
+    .semi-popover-wrapper {
+        color: var(--semi-color-white);
+
+        .text-\[var\(--semi-color-text-0\)\],
+        .text-text-0 {
+            color: var(--semi-color-white);
+        }
+
+        .text-\[var\(--semi-color-text-2\)\],
+        .text-text-2 {
+            color: color-mix(in srgb, var(--semi-color-white) 60%, transparent);
+        }
+    }
+    
+    .min-w-\[6\.875rem\].rounded-lg.border.border-solid.border-\[var\(--semi-color-border-select\)\].bg-\[var\(--semi-color-bg-dropdown\)\].py-1.text-\[var\(--semi-color-text-0\)\].shadow-dropdown.left-\[105\%\].right-auto {
+        background: color-mix(in srgb, var(--semi-color-bg-dropdown) 60%, transparent);
+    }
 }
