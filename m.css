@@ -215,10 +215,10 @@ div.absolute.right-0.top-0.z-50.flex.size-loose.items-center.justify-end.pt-2:ha
 .flex.h-\[124px\].w-\[130px\].cursor-pointer.flex-col.items-center.justify-center.gap-4:hover {
     transform: translateY(-6px);
     gap: .9rem;
-}
 
-.flex.h-\[124px\].w-\[130px\].cursor-pointer.flex-col.items-center.justify-center.gap-4:hover .box-border.size-\[80px\].p-\[15\%\].\!h-\[50px\].\!w-\[50px\].\!p-0 {
-    transform: rotate(6deg);
+    > div:first-of-type {
+        transform: rotate(6deg);
+    }
 }
 
 .flex.h-\[124px\].w-\[130px\].cursor-pointer.flex-col.items-center.justify-center.gap-4 .line-clamp-1.max-w-\[112px\].shrink-0.whitespace-normal.text-center.align-top.text-\[14px\].font-bold.leading-\[16px\].text-white {
@@ -341,8 +341,9 @@ div.absolute.right-0.top-0.z-50.flex.size-loose.items-center.justify-end.pt-2:ha
 }
 
 .relative.flex.flex-1.flex-col:has(.flex.h-10.w-\[47px\].items-center.justify-center.gap-x-2.border-0.\!border-l-\[3px\].border-solid.border-transparent.hover\:bg-white-10) {
-    height: fit-content;
+    height: calc(100vh - 286px);
     flex: 0 1 0;
+    margin-top: 7px;
 }
 
 .relative.flex.flex-1.flex-col:has(.flex.h-10.w-\[47px\].items-center.justify-center.gap-x-2.border-0.\!border-l-\[3px\].border-solid.border-transparent.hover\:bg-white-10) .scrollbar-hidden.absolute.inset-0.flex.flex-col.items-end.justify-start.gap-2.overflow-y-auto.pt-2 {
@@ -377,6 +378,7 @@ div.absolute.right-0.top-0.z-50.flex.size-loose.items-center.justify-end.pt-2:ha
     border-radius: 128px !important;
     corner-shape: superellipse(1.75);
     height: fit-content;
+    max-height: 100%;
 }
 
 .h-full.rounded-md.border.border-\[rgba\(255\,255\,255\,0\.20\)\].bg-\[var\(--semi-color-fndesktop-navbarBg\)\].backdrop-blur-\[20px\] .pb-\[7px\] {
@@ -386,22 +388,22 @@ div.absolute.right-0.top-0.z-50.flex.size-loose.items-center.justify-end.pt-2:ha
 
 .scrollbar-hidden.absolute.inset-0.flex.flex-col.items-end.justify-start.gap-2.overflow-y-auto.pt-2 {
     position: relative;
-    min-height: 128px;
+    /* min-height: 128px; */
 }
 
-.relative.flex.flex-1.flex-col:has(.flex.h-10.w-\[47px\].items-center.justify-center.gap-x-2.border-0.\!border-l-\[3px\].border-solid.border-transparent.hover\:bg-white-10) .scrollbar-hidden.absolute.inset-0.flex.flex-col.items-end.justify-start.gap-2.overflow-y-auto.pt-2::before,
-.relative.flex.flex-1.flex-col:has(.flex.h-10.w-\[47px\].items-center.justify-center.gap-x-2.border-0.\!border-l-\[3px\].border-solid.border-transparent.hover\:bg-white-10) .scrollbar-hidden.absolute.inset-0.flex.flex-col.items-end.justify-start.gap-2.overflow-y-auto.pt-2::after {
+.relative.flex.flex-1.flex-col:has(.flex.h-10.w-\[47px\].items-center.justify-center.gap-x-2.border-0.\!border-l-\[3px\].border-solid.border-transparent.hover\:bg-white-10)::before,
+.relative.flex.flex-1.flex-col:has(.flex.h-10.w-\[47px\].items-center.justify-center.gap-x-2.border-0.\!border-l-\[3px\].border-solid.border-transparent.hover\:bg-white-10)::after {
     content: '';
     width: calc(100% - 18px);
     height: 1px;
     background: var(--semi-color-border);
     margin: 0 auto;
+    position: absolute;
+    left: 9px;
 }
 
-.relative.flex.flex-1.flex-col:has(.flex.h-10.w-\[47px\].items-center.justify-center.gap-x-2.border-0.\!border-l-\[3px\].border-solid.border-transparent.hover\:bg-white-10) .scrollbar-hidden.absolute.inset-0.flex.flex-col.items-end.justify-start.gap-2.overflow-y-auto.pt-2::after {
-    position: absolute;
+.relative.flex.flex-1.flex-col:has(.flex.h-10.w-\[47px\].items-center.justify-center.gap-x-2.border-0.\!border-l-\[3px\].border-solid.border-transparent.hover\:bg-white-10)::after {
     bottom: 10px;
-    left: 9px;
 }
 
 .flex.h-10.w-\[47px\].items-center.justify-center.gap-x-2.border-0.\!border-l-\[3px\].border-solid.border-transparent.hover\:bg-white-10.bg-white-10.\!border-focus-border::before {
@@ -434,5 +436,13 @@ body:not([theme-mode="dark"]) {
 
     .min-w-\[6\.875rem\].rounded-lg.border.border-solid.border-\[var\(--semi-color-border-select\)\].bg-\[var\(--semi-color-bg-dropdown\)\].py-1.text-\[var\(--semi-color-text-0\)\].shadow-dropdown.left-\[105\%\].right-auto {
         background: color-mix(in srgb, var(--semi-color-bg-dropdown) 60%, transparent);
+    }
+
+    .h-full.rounded-md.border.border-\[rgba\(255\,255\,255\,0\.20\)\].bg-\[var\(--semi-color-fndesktop-navbarBg\)\].backdrop-blur-\[20px\] {
+        .flex.h-10.w-\[47px\].items-center.justify-center.gap-x-2.border-0.\!border-l-\[3px\].border-solid.border-transparent.hover\:bg-white-10.bg-white-10.\!border-focus-border::before,
+        .relative.flex.flex-1.flex-col:has(.flex.h-10.w-\[47px\].items-center.justify-center.gap-x-2.border-0.\!border-l-\[3px\].border-solid.border-transparent.hover\:bg-white-10)::before,
+        .relative.flex.flex-1.flex-col:has(.flex.h-10.w-\[47px\].items-center.justify-center.gap-x-2.border-0.\!border-l-\[3px\].border-solid.border-transparent.hover\:bg-white-10)::after {
+            background-color: color-mix(in srgb, var(--semi-color-white) 20%, transparent);
+        }
     }
 }
