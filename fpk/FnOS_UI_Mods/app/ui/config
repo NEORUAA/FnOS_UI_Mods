@@ -1,9 +1,9 @@
 {
     ".url": {
         "FnOS_UI_Mods.Application": {
-            "title": "FnOS_UI_Mods",
+            "title": "FnOS UI 注入工具",
             "icon": "images/icon_{0}.png",
-            "type": "url",
+            "type": "iframe",
             "protocol": "",
             "port": "8080",
             "url": "/",

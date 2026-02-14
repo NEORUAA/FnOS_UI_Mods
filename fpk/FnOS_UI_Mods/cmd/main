@@ -1,10 +1,13 @@
 #!/bin/bash
+set -euo pipefail
 
 LOG_FILE="${TRIM_PKGVAR}/info.log"
 PID_FILE="${TRIM_PKGVAR}/app.pid"
 
-# write the command to start your program here 
-CMD=""
+export PATH=/var/apps/nodejs_v22/target/bin:$PATH
+
+PORT="${TRIM_SERVICE_PORT:-8080}"
+CMD="PORT=${PORT} node ${TRIM_APPDEST}/server/server.js"
 
 log_msg() {
     echo "$(date '+%Y-%m-%d %H:%M:%S') - $1" >> ${LOG_FILE}
@@ -13,6 +16,11 @@ log_msg() {
 start_process() {
     if status; then
         return 0
+    fi
+
+    if ! command -v node >/dev/null 2>&1; then
+        log_msg "Node.js runtime not found. Ensure install_dep_apps=nodejs_v22."
+        exit 1
     fi
 
     log_msg "Starting process ..."
