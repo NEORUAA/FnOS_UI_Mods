@@ -396,6 +396,7 @@ div.absolute.right-0.top-0.z-50.flex.size-loose.items-center.justify-end.pt-2:ha
     corner-shape: superellipse(1.75);
     height: fit-content;
     max-height: 100%;
+    backdrop-filter: saturate(3) blur(32px) !important;
 }
 
 .h-full.rounded-md.border.border-\[rgba\(255\,255\,255\,0\.20\)\].bg-\[var\(--semi-color-fndesktop-navbarBg\)\].backdrop-blur-\[20px\] .pb-\[7px\] {
@@ -431,6 +432,31 @@ div.absolute.right-0.top-0.z-50.flex.size-loose.items-center.justify-end.pt-2:ha
     background: var(--semi-color-text-2);
     left: 6px;
     border-radius: 999px;
+}
+
+/* "回到桌面"按钮 */
+/* 注释此段以还原按钮位置 */
+.flex.flex-col.items-center.border-0.\!border-b > .flex.h-10.w-\[47px\].items-center.justify-center.gap-x-2.border-0.\!border-l-\[3px\].border-solid.border-transparent.hover\:bg-white-10:first-child {
+    position: absolute;
+    bottom: -6px;
+    mask-image: none;
+    width: 24px !important;
+    height: 2px !important;
+    border-radius: 2px;
+    transform: scaleX(0.5) translateY(0);
+}
+
+.flex.flex-col.items-center.border-0.\!border-b > .flex.h-10.w-\[47px\].items-center.justify-center.gap-x-2.border-0.\!border-l-\[3px\].border-solid.border-transparent.hover\:bg-white-10:first-child:hover {
+    background: var(--semi-color-white-80);
+    transform: scaleX(1) translateY(4px);
+}
+
+.semi-image.size-full:has(img[alt="桌面"]) {
+    background: transparent !important;
+}
+
+.h-full.rounded-md.border.border-\[rgba\(255\,255\,255\,0\.20\)\].bg-\[var\(--semi-color-fndesktop-navbarBg\)\].backdrop-blur-\[20px\] .box-border.flex.h-full.flex-col.py-3 {
+    padding-bottom: 19px !important;
 }
 
 /* 启动台 */
